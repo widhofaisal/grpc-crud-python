@@ -1,0 +1,8 @@
+- python -m venv venv
+- source venv/bin/activate
+- create cars.proto
+- python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. cars.proto
+- pip install grpcio grpcio-tools psycopg2-binary
+- pip install python-dotenv
+- create car_service.py
+- python car_service.py

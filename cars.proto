@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package cars;
+
+service CarService {
+    rpc CreateCar (Car) returns (Car);
+    rpc GetCar (CarId) returns (Car);
+    rpc UpdateCar (Car) returns (Car);
+    rpc DeleteCar (CarId) returns (CarId);
+    rpc ListCars (Empty) returns (CarList);
+}
+
+message Car {
+    int64 id = 1;
+    string brand = 2;
+    string date_created = 3;
+    string date_modified = 4;
+    string last_modified_by = 5;
+    float price = 6;
+    string type = 7;
+    int32 year = 8;
+}
+
+message CarId {
+    int64 id = 1;
+}
+
+message CarList {
+    repeated Car cars = 1;
+}
+
+message Empty {}
